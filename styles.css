@@ -1,88 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to right, #ffe0ec, #fff6f9);
-  padding: 20px;
-  overflow-x: hidden;
-  position: relative;
-}
-
-.container {
-  max-width: 800px;
-  margin: auto;
-  background-color: #ffffffcc;
-  border-radius: 20px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
-  padding: 30px;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-}
-
-header h1 {
-  color: #e91e63;
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-.foto {
-  width: 100%;
-  max-width: 400px;
-  border-radius: 15px;
-  margin-bottom: 20px;
-  box-shadow: 0 0 10px #ffb6c1;
-}
-
-.carta {
-  background: #fff0f5;
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: inset 0 0 10px #f8bbd0;
-  text-align: left;
-  margin-top: 20px;
-}
-
-.carta h2 {
-  color: #d81b60;
-  font-size: 1.8rem;
-  margin-bottom: 15px;
-}
-
-.carta p {
-  margin-bottom: 15px;
-  font-size: 1.1rem;
-}
-
-.firma {
-  font-style: italic;
-  color: #b71c1c;
-  text-align: right;
-}
-
-.hidden {
-  display: none;
-}
-
-button {
-  background-color: #f06292;
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  font-size: 1rem;
-  margin: 10px;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #ec407a;
-}
-
 /* Corazones */
 .corazones {
   position: fixed;
@@ -92,7 +7,10 @@ button:hover {
   height: 100%;
   pointer-events: none;
   z-index: 0;
+  opacity: 0;  /* Inicialmente invisibles */
+  transition: opacity 0.5s ease; /* Para que aparezcan con suavidad */
 }
+
 .heart {
   position: absolute;
   width: 20px;
@@ -101,6 +19,7 @@ button:hover {
   transform: rotate(45deg);
   animation: flotar 5s linear infinite;
 }
+
 .heart::before,
 .heart::after {
   content: "";
@@ -110,16 +29,23 @@ button:hover {
   background: red;
   border-radius: 50%;
 }
+
 .heart::before {
   top: -10px;
   left: 0;
 }
+
 .heart::after {
   left: -10px;
   top: 0;
 }
+
 @keyframes flotar {
   0% { transform: translateY(100vh) rotate(45deg); opacity: 1; }
   100% { transform: translateY(-10vh) rotate(45deg); opacity: 0; }
 }
 
+/* Mostrar corazones cuando la carta aparece */
+.corazones.show {
+  opacity: 1;
+}
