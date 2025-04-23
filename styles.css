@@ -1,3 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Patrick Hand', cursive;
+  background: linear-gradient(135deg, #ffd6ec, #e1d4f2);
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.container {
+  text-align: center;
+  padding: 2rem;
+  max-width: 800px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #b7288f;
+}
+
+.foto {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 100%;
+  border: 5px solid white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  margin-bottom: 2rem;
+}
+
+button {
+  background-color: #fcb5d2;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Patrick Hand', cursive;
+  margin: 10px;
+}
+
+button:hover {
+  background-color: #f988b5;
+}
+
+.carta {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 2rem;
+  margin-top: 2rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  font-size: 1.2rem;
+  line-height: 1.8;
+  text-align: left;
+}
+
+.carta h2 {
+  color: #c0398f;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.firma {
+  font-style: italic;
+  text-align: right;
+  margin-top: 2rem;
+}
+
 /* Corazones */
 .corazones {
   position: fixed;
@@ -45,12 +120,10 @@
   100% { transform: translateY(-10vh) rotate(45deg); opacity: 0; }
 }
 
-/* Mostrar corazones cuando la carta aparece */
 .corazones.show {
   opacity: 1;
 }
 
-/* Ocultar contenido al inicio */
 .hidden {
   display: none;
 }
