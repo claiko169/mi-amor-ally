@@ -1,0 +1,92 @@
+/* Estilos básicos */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+  color: #fff;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 1;
+}
+
+.foto-portada {
+  width: 100%;
+  max-height: 70%;
+  object-fit: cover;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #fff;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  margin-top: 20px;
+}
+
+.carta {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.carta h2 {
+  font-size: 2rem;
+  color: #f5a5d1;
+}
+
+.carta p {
+  font-size: 1.2rem;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* Efectos */
+@keyframes hearts {
+  0% { transform: scale(0); opacity: 1; }
+  100% { transform: scale(3); opacity: 0; }
+}
+
+.heart {
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  animation: hearts 4s infinite ease-in-out;
+  opacity: 0;
+}
+
+.heart:nth-child(1) {
+  animation-delay: 1s;
+}
+
+.heart:nth-child(2) {
+  animation-delay: 2s;
+}
+
+.heart:nth-child(3) {
+  animation-delay: 3s;
+}
