@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Una sorpresa más para ti 💝</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(rgba(255, 192, 203, 0.5), rgba(255, 105, 180, 0.8)), url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      text-align: center;
+    }
+
+    .video-container {
+      max-width: 90%;
+      border: 8px solid white;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(255, 182, 193, 0.9);
+    }
+
+    h1 {
+      position: absolute;
+      top: 30px;
+      width: 100%;
+      text-align: center;
+      font-size: 2rem;
+      text-shadow: 1px 1px 5px #000;
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
+
+    .back-btn {
+      position: absolute;
+      bottom: 30px;
+      padding: 10px 20px;
+      background-color: white;
+      color: hotpink;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .back-btn:hover {
+      background-color: #ffe6f0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Algo más que quería mostrarte... 💞</h1>
+
+  <div class="video-container">
+    <video controls autoplay loop>
+      <source src="irene.mp4" type="video/mp4">
+      Tu navegador no soporta el video.
+    </video>
+  </div>
+
+  <button class="back-btn" onclick="window.location.href='index.html'">Volver a la carta 💌</button>
+</body>
+</html>
