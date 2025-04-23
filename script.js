@@ -1,24 +1,6 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Para mi amor Ally 💖</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <div class="container">
-    <header>
-      <h1>Para ti, mi amor ❤️</h1>
-      <img src="allyirebeso.jpg" alt="Nosotras" class="foto">
-    </header>
-
-    <section class="carta">
-      <h2>Un pequeño detalle para ti 🥺</h2>
-      <p>Hoy quiero escribirte una carta a mi manera y con toda la ilusión de mi corazón, porque como ya te dije te mereces esto y mil cosas mas .
-      </p>
-      <p>
-        Hola mi amor, es una de mis primeras veces haciendo esto para alguien y tengo la verdad miedo de que me salte algún error jsjsjs.
+window.onload = function () {
+// Máquina de escribir
+const carta = `Hola mi amor, es una de mis primeras veces haciendo esto para alguien y tengo la verdad miedo de que me salte algún error jsjsjs.
         Bueno a lo que iba, quiero escribirte varias cosas, algunas ya las sabes porque las hemos hablado varias veces pero no me importa aun así
          nunca esta de mas recordártelo ⸜(｡˃ ᵕ ˂ )⸝♡
         Antes de nada quiero agradecerte por quererme tal y como soy y sacarme sonrisas todos los días, eres una de las pocas personas que he 
@@ -50,20 +32,45 @@
          a tu lado asi que ya habrá mas oportunidades para hacerte este tipo de detalles que tanto te mereces mi vida y para despedirme de esta "carta" 
          quiero decirte que no puedo esperar a que ya oficialmente seamos novias porque aunque se que soy tuya me gusta el titulo ya que suena mas serio
           y seria un siguiente paso en nuestra relación y eso me emociona tanto que es indescriptible.
-        PD:GRACIAS POR TODO LO QUE HACES POR MI JAMÁS CAMBIES PORFA TE AMO MUCHISIMO MI AMOR
-      </p>
-      <p>
-        Gracias por existir y por permitirme amarte.
-      </p>
-      <p class="firma">Con todo mi cariño, tu futura novia 💕</p>
-    </section>
+        PD:GRACIAS POR TODO LO QUE HACES POR MI JAMÁS CAMBIES PORFA TE AMO MUCHISIMO MI AMOR`;
 
-    <audio autoplay loop>
-      <source src="loveme.mp3" type="audio/mp3" />
-      Tu navegador no soporta el audio.
-    </audio>
-  </div>
+let i = 0;
+const texto = document.getElementById("textoCarta");
 
-  <script src="script.js"></script>
-</body>
-</html>
+function escribir() {
+  if (i < carta.length) {
+    texto.innerHTML += carta.charAt(i);
+    i++;
+    setTimeout(escribir, 40);
+  }
+}
+
+document.getElementById("mostrarCarta").onclick = () => {
+  document.getElementById("carta").classList.remove("hidden");
+  escribir();
+};
+
+// Música
+const musica = document.getElementById("musica");
+const btnMusica = document.getElementById("btnMusica");
+btnMusica.onclick = () => {
+  if (musica.paused) {
+    musica.play();
+    btnMusica.textContent = "⏸ Música";
+  } else {
+    musica.pause();
+    btnMusica.textContent = "▶️ Música";
+  }
+};
+
+// Corazones flotando
+setInterval(() => {
+  const corazon = document.createElement("div");
+  corazon.className = "heart";
+  corazon.style.left = Math.random() * 100 + "vw";
+  corazon.style.animationDuration = (3 + Math.random() * 2) + "s";
+  document.getElementById("corazones").appendChild(corazon);
+
+  setTimeout(() => corazon.remove(), 5000);
+}, 300);
+};
