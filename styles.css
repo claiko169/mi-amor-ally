@@ -1,92 +1,125 @@
-/* Estilos básicos */
-body {
-  font-family: 'Arial', sans-serif;
+* {
   margin: 0;
   padding: 0;
-  background-color: #f0f0f0;
-  color: #fff;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #ffe0ec, #fff6f9);
+  padding: 20px;
+  overflow-x: hidden;
+  position: relative;
 }
 
 .container {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-}
-
-.header {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  max-width: 800px;
+  margin: auto;
+  background-color: #ffffffcc;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  padding: 30px;
   text-align: center;
+  position: relative;
   z-index: 1;
 }
 
-.foto-portada {
-  width: 100%;
-  max-height: 70%;
-  object-fit: cover;
+header h1 {
+  color: #e91e63;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
 }
 
-h1 {
-  font-size: 3rem;
-  color: #fff;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-  margin-top: 20px;
+.foto {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px #ffb6c1;
 }
 
 .carta {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 30px;
-  width: 80%;
-  max-width: 600px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  background: #fff0f5;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: inset 0 0 10px #f8bbd0;
+  text-align: left;
+  margin-top: 20px;
 }
 
 .carta h2 {
-  font-size: 2rem;
-  color: #f5a5d1;
+  color: #d81b60;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
 }
 
 .carta p {
-  font-size: 1.2rem;
-  color: #fff;
-  line-height: 1.6;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
 }
 
-/* Efectos */
-@keyframes hearts {
-  0% { transform: scale(0); opacity: 1; }
-  100% { transform: scale(3); opacity: 0; }
+.firma {
+  font-style: italic;
+  color: #b71c1c;
+  text-align: right;
 }
 
+.hidden {
+  display: none;
+}
+
+button {
+  background-color: #f06292;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  margin: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ec407a;
+}
+
+/* Corazones */
+.corazones {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
 .heart {
   position: absolute;
-  top: -10%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50px;
-  height: 50px;
-  background-color: red;
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  animation: hearts 4s infinite ease-in-out;
-  opacity: 0;
+  width: 20px;
+  height: 20px;
+  background: red;
+  transform: rotate(45deg);
+  animation: flotar 5s linear infinite;
+}
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 50%;
+}
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+.heart::after {
+  left: -10px;
+  top: 0;
+}
+@keyframes flotar {
+  0% { transform: translateY(100vh) rotate(45deg); opacity: 1; }
+  100% { transform: translateY(-10vh) rotate(45deg); opacity: 0; }
 }
 
-.heart:nth-child(1) {
-  animation-delay: 1s;
-}
-
-.heart:nth-child(2) {
-  animation-delay: 2s;
-}
-
-.heart:nth-child(3) {
-  animation-delay: 3s;
-}
